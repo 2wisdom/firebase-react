@@ -1,26 +1,18 @@
 import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
-    <div className="App">
-      <h1>SignIn</h1>
-      <p>email</p>
-      <input type="email"></input>
-      <p>password</p>
-      <input type="password"></input>
-      <div>
-        <button type="submit">회원가입</button>
-      </div>
-
-      <h1>SignUp</h1>
-      <p>email</p>
-      <input type="email"></input>
-      <p>password</p>
-      <input type="password"></input>
-      <div>
-        <button type="submit">로그인</button>
-      </div>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<SignIn />}></Route>
+          <Route path="/SignUp/" element={<SignUp />}></Route>
+        </Routes>
+      </Router>
+    </>
   );
 }
 
